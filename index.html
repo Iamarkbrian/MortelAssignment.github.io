@@ -1,0 +1,119 @@
+<!Doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <title>Conversion Calculator</title>
+    </head>
+    <style>
+        *{ 
+        box-sizing: border-box;
+        background-color: beige;
+        }
+		.container {
+            color:navy;
+            border: 1px solid black;
+		}
+        .container h2{
+            color:#36454F ;
+        }
+        .container2 {
+            background-color: beige;
+            border: 1px solid black;
+		}
+	
+        </style>
+    <body>
+      <div class="container">
+        <div class="row">
+          <div class="col-md-6 bg-white"> <h2> Weight Converter </h2>
+            <label>Enter weight in Kilograms:</label>
+	      <input type="number" id="kgInput" onchange="convertWeight()">
+	      <br><br>
+           <label>Weight in Grams</label>
+           <input type="text" id="gramsOutput" disabled><br>
+           <label>Weight in Miligrams</label>
+           <input type="text" id="miligramsOutput" disabled><br>
+           <label>Weight in MicroGrams</label>
+           <input type="text" id="microgramsOutput" disabled>
+           </div>
+      
+           <div class="col-md-6 bg-white"> <h2> Length Converter </h2> 
+            <label> Enter Length in Kilometers:</label>
+            <input type="number" id="kilometersInput" onchange="convertLength()">
+            <br><br>
+            <label>Length in Meters </label>
+            <input type="text" id="metersOutput" disabled><br>
+            <label>Length in Feet </label>
+            <input type="text" id="feetOutput" disabled><br>
+            <label>Length in Centimeters </label>
+            <input type="text" id="centimetersOutput" disabled><br>
+            </div>
+        </div>
+        
+    <div class="container2">
+        <div class="row">
+          <div class="col-md-6 bg-white"> <h2> Time Converter </h2>
+            <label>Enter the time in Minutes:</label>
+	      <input type="number" id="minuteInput" onchange="convertTime()">
+	      <br><br>
+           <label>Miliseconds</label>
+           <input type="text" id="milisecondsOutput" disabled><br>
+           <label>Seconds</label>
+           <input type="text" id="secondsOutput" disabled><br>
+           <label>Hour</label>
+           <input type="text" id="hourOutput" disabled>
+           </div>
+           
+         <div class="col-md-6 bg-white"> <h2> Temperature Converter </h2>
+            <label>Enter the Degree in Celsius</label>
+            <input type="number" id="celsiusInput" onchange="convertTemperature()">
+            <br><br>
+             <label>Fahrenheit</label>
+             <input type="text" id="fahrenheitOutput" disabled><br>
+             <label>Kelvin</label>
+             <input type="text" id="kelvinOutput" disabled><br>
+             </div>
+           </div>
+        </div>
+  
+           <script>
+           function convertWeight() {
+            let kg = document.getElementById("kgInput").value;
+            let grams = kg * 0.001;
+            let miligrams = kg * 1e-6;
+            let micrograms = kg * 1e-9;
+            document.getElementById("gramsOutput").value = grams;
+            document.getElementById("miligramsOutput").value = miligrams;
+            document.getElementById("microgramsOutput").value = micrograms;
+           }
+           function convertLength() {
+            let kilometers = document.getElementById("kilometersInput").value;
+            let meters = kilometers * 0.001;
+            let feet = kilometers * 0.0003048;
+            let centimeters = kilometers * 1e-5;
+            document.getElementById("metersOutput").value = meters;
+            document.getElementById("feetOutput").value = feet;
+            document.getElementById("centimetersOutput").value = centimeters;
+           }
+           function convertTime() {
+            let minutes = document.getElementById("minuteInput").value;
+            let milisecond = minutes * 1.66667e-5;
+            let seconds = minutes * 0.0166667;
+            let hour = minutes * 60;
+            document.getElementById("milisecondsOutput").value = miliseconds;
+            document.getElementById("secondsOutput").value = seconds;
+            document.getElementById("hourOutput").value = hour;
+           }
+           function convertTemperature() {
+            let Celsius = document.getElementById("celsiusInput").value;
+            let kelvin = celsius * -273.15;
+            let fahrenheit = celsius * 32;
+            document.getElementById("kelvinOutput").value = kelvin;
+            document.getElementById("fahrenheitOutput").value = fahrenheit;
+           }    
+           </script>
+        
+    </body>
+ </html>
